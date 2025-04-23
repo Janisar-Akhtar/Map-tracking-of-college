@@ -1,1 +1,75 @@
-<h1>This is Block Saction</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocks - College Map Tracking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Explore Blocks</h1>
+    
+        <!-- Search Bar -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <form class="form-inline justify-content-center">
+                    <input class="form-control w-75 mr-2" type="search" placeholder="Search for Blocks" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Blocks Cards -->
+        <div class="row mt-5" id="blocks-container">
+            <!-- Cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        // Get the container where the cards will be added
+        const blocksContainer = document.getElementById('blocks-container');
+
+        // Generate 56 block cards
+        for (let i = 1; i <= 56; i++) {
+            // Create a card element
+            const card = document.createElement('div');
+            card.className = 'col-md-3 mb-4';
+
+            // Add card content
+            card.innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Block ${i}</h5>
+                        <p class="card-text">Details about Block ${i}.</p>
+                    </div>
+                </div>
+            `;
+
+            // Append the card to the container
+            blocksContainer.appendChild(card);
+        }
+    </script>
+</body>
+</html>

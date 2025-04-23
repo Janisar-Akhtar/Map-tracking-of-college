@@ -1,1 +1,75 @@
-<h1>This is canteen Saction</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteens - College Map Tracking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Explore Canteens</h1>
+    
+        <!-- Search Bar -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <form class="form-inline justify-content-center">
+                    <input class="form-control w-75 mr-2" type="search" placeholder="Search for Canteens" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Canteen Cards -->
+        <div class="row mt-5" id="canteens-container">
+            <!-- Cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        // Get the container where the cards will be added
+        const canteensContainer = document.getElementById('canteens-container');
+
+        // Generate 20 canteen cards
+        for (let i = 1; i <= 20; i++) {
+            // Create a card element
+            const card = document.createElement('div');
+            card.className = 'col-md-3 mb-4'; // 4 cards per row
+
+            // Add card content
+            card.innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Canteen ${i}</h5>
+                        <p class="card-text">Details about Canteen ${i}.</p>
+                    </div>
+                </div>
+            `;
+
+            // Append the card to the container
+            canteensContainer.appendChild(card);
+        }
+    </script>
+</body>
+</html>

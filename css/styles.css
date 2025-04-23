@@ -1,7 +1,7 @@
 
 /* Navbar */
 .navbar {
-    background-color: #007bff;
+    background-color: #007bff ;
 }
 
 body {
@@ -9,6 +9,10 @@ body {
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
+}
+.navbar-brand img {
+    width: 50px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 header {
